@@ -1,15 +1,11 @@
 import React from "react";
+import { Navbar } from "../components";
+import { Start } from "../screens";
 
-function App() {
-  return (
+const App: React.FC = () =>
     <div className="App">
-      <header className="App-header">
-        <div className="title is-1">
-          Hello
-        </div>
-      </header>
-    </div>
-  );
-}
+        <Navbar />
+        <Start />
+    </div>;
 
 export default App;
