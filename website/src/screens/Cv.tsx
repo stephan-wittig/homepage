@@ -1,10 +1,10 @@
 import React from "react";
 
-const Start: React.FC = () =>
+const Cv: React.FC = () =>
     <section className="section">
         <h2 className="title is-3">
-            About me
+            CV
         </h2>
     </section>;
 
-export default Start;
+export default Cv;

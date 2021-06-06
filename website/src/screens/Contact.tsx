@@ -1,10 +1,10 @@
 import React from "react";
 
-const Start: React.FC = () =>
+const Contact: React.FC = () =>
     <section className="section">
         <h2 className="title is-3">
-            About me
+            Contact
         </h2>
     </section>;
 
-export default Start;
+export default Contact;

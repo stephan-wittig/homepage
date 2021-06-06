@@ -1,0 +1,10 @@
+.not-found-banner {
+    position: relative;
+    
+    &__notification.notification {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        position: absolute;
+        width: 100%;
+    }
+}
