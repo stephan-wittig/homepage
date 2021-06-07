@@ -1,0 +1,19 @@
+.navbar {
+    @include from($tablet) {
+        padding: 0 1.5rem;
+    }
+
+
+    &__container.container {
+        position: initial;
+        
+        & .navbar-menu {
+            margin: 0;
+        }
+    }
+
+    &__brand-item.navbar-item {
+        position: absolute;
+        left: 0;
+    }
+}

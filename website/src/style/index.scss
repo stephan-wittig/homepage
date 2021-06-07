@@ -1,3 +1,4 @@
-@use "components";
-@use "screens";
-@use "settings";
+@import "settings";
+
+@import "components";
+@import "screens";

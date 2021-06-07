@@ -11,7 +11,7 @@ const Cv: React.FC = () =>
                     Curriculum Vitae
                 </h2>
                 <p className="block">
-                    You can find a summary of my professional and academic career below. If you want more detail, you'll have to <Link to="/contact">
+                    You can find a summary of my professional and academic career below. If you want more details, you'll have to <Link to="/contact">
                         contact me
                     </Link>. 
                 </p>
