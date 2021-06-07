@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink, NavLinkProps } from "react-router-dom";
+import { Link, NavLink, NavLinkProps } from "react-router-dom";
+import cx from "classnames";
 
 const NavbarLink: React.FC<NavLinkProps> = (linkProps) =>
     <NavLink
@@ -8,13 +9,19 @@ const NavbarLink: React.FC<NavLinkProps> = (linkProps) =>
         activeClassName="is-active"
     />;
 
-const Navbar: React.FC = () =>
-    <nav className="navbar is-dark">
+interface Props {
+    colourless?: boolean;
+}
+
+const Navbar: React.FC<Props> = ({ colourless }) =>
+    <nav className={cx("navbar", { "is-dark": !colourless})}>
         <div className="navbar-brand">
             <div className="navbar-item">
-                <h1 className="title is-4 has-text-primary">
-                    Stephan Wittig
-                </h1>
+                <Link to="/">
+                    <h1 className={cx("title is-4", { "has-text-primary": !colourless})}>
+                        Stephan Wittig
+                    </h1>
+                </Link>
             </div>
 
             <button className="navbar-burger">
