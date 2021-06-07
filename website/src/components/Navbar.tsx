@@ -2,6 +2,10 @@ import React from "react";
 import { Link, NavLink, NavLinkProps } from "react-router-dom";
 import cx from "classnames";
 
+interface Props {
+    hero?: boolean;
+}
+
 const NavbarLink: React.FC<NavLinkProps> = (linkProps) =>
     <NavLink
         { ...linkProps }
@@ -9,26 +13,36 @@ const NavbarLink: React.FC<NavLinkProps> = (linkProps) =>
         activeClassName="is-active"
     />;
 
-interface Props {
-    colourless?: boolean;
-}
+type BrandProps = Pick<Props, "hero">; 
 
-const Navbar: React.FC<Props> = ({ colourless }) =>
-    <nav className={cx("navbar", { "is-dark": !colourless})}>
+const Brand: React.FC<BrandProps> = ( { hero } ) => 
+    <h1 className={cx("is-size-4", {"has-text-primary": !hero})}>
+        {console.log("hero", hero)}
+        <span className="has-text-weight-light">
+            Stephan
+        </span>
+        <span className="has-text-weight-medium">
+            Wittig
+        </span>
+    </h1>;
+
+const Navbar: React.FC<Props> = ({ hero }) =>
+    <nav className={cx("navbar", { "is-dark": !hero})}>
         <div className="navbar-brand">
             <div className="navbar-item">
-                <Link to="/">
-                    <h1 className={cx("title is-4", { "has-text-primary": !colourless})}>
-                        Stephan Wittig
-                    </h1>
-                </Link>
+                {hero
+                    ? <Brand hero />
+                    : <Link to="/">
+                        <Brand />
+                    </Link>
+                }
             </div>
 
-            <button className="navbar-burger">
+            <a role="button" className="navbar-burger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </a>
         </div>
 
         <div className="navbar-menu">
