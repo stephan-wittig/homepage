@@ -4,7 +4,16 @@ resource "google_app_engine_application" "web_app" {
 
 resource "google_project_iam_binding" "cloud_builder_app_engine" {
   project = "homepage-338312"
-  role    = "roles/appengine.deployer"
+  role    = "roles/appengine.appAdmin"
+
+  members = [
+    "serviceAccount:181624353136@cloudbuild.gserviceaccount.com",
+  ]
+}
+
+resource "google_project_iam_binding" "cloud_builder_storage" {
+  project = "homepage-338312"
+  role    = "roles/storage.objectAdmin"
 
   members = [
     "serviceAccount:181624353136@cloudbuild.gserviceaccount.com",
