@@ -31,3 +31,19 @@ resource "google_service_account_iam_binding" "admin-account-iam" {
     "serviceAccount:181624353136@cloudbuild.gserviceaccount.com",
   ]
 }
+
+resource "google_app_engine_domain_mapping" "stephan_tech" {
+  domain_name = "stephan.tech"
+
+  ssl_settings {
+    ssl_management_type = "AUTOMATIC"
+  }
+}
+
+resource "google_app_engine_domain_mapping" "www_stephan_tech" {
+  domain_name = "stephan.tech"
+
+  ssl_settings {
+    ssl_management_type = "AUTOMATIC"
+  }
+}
