@@ -16,7 +16,7 @@ const NavbarLink: React.FC<NavLinkProps> = (linkProps) =>
 type BrandProps = Pick<Props, "hero">; 
 
 const Brand: React.FC<BrandProps> = ( { hero } ) => 
-    <h1 className={cx("is-size-4", {"has-text-primary": !hero})}>
+    <h1 className={cx(hero ? "is-size-2 has-text-light" : "is-size-4 has-text-primary")}>
         <span className="has-text-weight-light">
             Stephan
         </span>
