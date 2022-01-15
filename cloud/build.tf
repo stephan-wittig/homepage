@@ -1,10 +1,10 @@
 resource "google_cloudbuild_trigger" "deploy_website" {
-  name = "deploy-website"
+  name     = "deploy-website"
   filename = "ci/cloudbuild.yaml"
 
   github {
     owner = "stephan-wittig"
-    name = "homepage"
+    name  = "homepage"
 
     push {
       branch = "^main$"
