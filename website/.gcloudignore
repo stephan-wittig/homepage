@@ -1,0 +1,15 @@
+.gcloudignore
+.git
+.gitignore
+
+# Node.js dependencies:
+node_modules/
+
+# Source code
+src/
+
+# Config files
+package.json
+README.md
+tsconfig.json
+yarn.lock

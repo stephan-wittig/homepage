@@ -11,3 +11,6 @@ steps:
   dir: 'website'
   entrypoint: yarn
   args: ['build']
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  entrypoint: 'gcloud'
+  args: ['app', 'deploy', '--stop-previous-version']
