@@ -3,6 +3,7 @@ resource "google_app_engine_application" "web_app" {
 }
 
 resource "google_project_iam_binding" "cloud_builder_app_engine" {
+  project = "homepage-338312"
   role    = "roles/appengine.deployer"
 
   members = [
