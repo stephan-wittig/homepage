@@ -32,3 +32,10 @@ resource "google_project_service" "app_engine" {
   disable_dependent_services = true
   disable_on_destroy = true
 }
+
+resource "google_project_service" "iam" {
+  service = "iam.googleapis.com"
+
+  disable_dependent_services = true
+  disable_on_destroy = true
+}
