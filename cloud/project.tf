@@ -25,3 +25,10 @@ resource "google_project_service" "cloud_build" {
   disable_dependent_services = true
   disable_on_destroy = true
 }
+
+resource "google_project_service" "storage" {
+  service = "storage.googleapis.com"
+
+  disable_dependent_services = true
+  disable_on_destroy = true
+}
