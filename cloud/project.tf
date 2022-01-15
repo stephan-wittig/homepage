@@ -1,5 +1,5 @@
 provider "google" {
-  project = "homepage-338312 "
+  project = "homepage-338312"
   region  = "us-east1"
   zone    = "us-east1-c"
 }
