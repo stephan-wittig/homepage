@@ -5,7 +5,7 @@ resource "google_cloudbuild_trigger" "deploy_website" {
   github {
     owner = "stephan-wittig"
     name = "homepage"
-    
+
     push {
       branch = "^main$"
     }
