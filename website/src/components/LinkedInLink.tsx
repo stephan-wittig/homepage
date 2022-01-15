@@ -1,4 +1,5 @@
 import React from "react";
+import linkedInLogo from "../images/linkedInLogo.png";
 
 interface Props {
     children: string;
@@ -13,7 +14,7 @@ const LinkedInLink: React.FC<Props> = ({ children }) =>
     >
         <figure className="image is-16x16 linkedin-link__logo">
             <img 
-                src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png"
+                src={linkedInLogo}
                 alt=""
             />
         </figure>{ children }
