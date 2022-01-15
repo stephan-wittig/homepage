@@ -4,7 +4,7 @@ import { Navbar } from "../components";
 
 const Start: React.FC = () =>
     <>
-        <section className="hero is-medium is-primary">
+        <section className="hero is-primary">
             <div className="hero-head">
                 <Navbar hero />
             </div>
