@@ -4,7 +4,7 @@ import { Navbar } from "../components";
 
 const Start: React.FC = () =>
     <>
-        <section className="hero is-medium start__hero">
+        <section className="hero is-medium is-primary">
             <div className="hero-head">
                 <Navbar hero />
             </div>
@@ -21,19 +21,19 @@ const Start: React.FC = () =>
             <div className="hero-footer">
                 <section className="section">
                     <div className="container is-size-4 has-text-weight-medium">
-                        Welcome to my homepage. I'm a professional software engineer currently working at Breaking Wave in London.
-                        Later this year, I'm going to start studying at London School of Economics.
+                        Welcome to my homepage. I'm a software engineer currently studying at London School of Economics.
+                        Before that, I used to work at Breaking Wave and Deutsche Bank.
                     </div>
                 </section>
             </div>
         </section>
-        <section className="section start__skills">
+        <section className="section">
             <div className="container">
                 <h4 className="title is-3">
                     Areas of Expertise
                 </h4>
                 <p className="block">
-                    Boring stuff. Frontend and backend engineering. Leading projects. Requirement analysis. Devops.
+                    Frontend and backend engineering. Leading projects. Requirement analysis. Devops. Digital identity and data protection. 
                 </p>
                 <p className="block">
                     You'll find more about my technical abilities and my career <Link to="/cv">
@@ -42,13 +42,13 @@ const Start: React.FC = () =>
                 </p>
             </div>
         </section>
-        <section className="section start__interests">
+        <section className="section">
             <div className="container">
                 <h4 className="title is-3">
                     Interests and Hobbies
                 </h4>
                 <p className="block">
-                    More interesting stuff. Cool technology: Data Science, Cloud and Blockchain. Modern economics and politics. Sailing. Baking and cooking. Travelling Europe.
+                    Cool technology: Data Science, Cloud and Blockchain. Modern economics and politics. Sailing. Baking and cooking. Travelling the world (mostly Europe though).
                 </p>
             </div>
         </section>
