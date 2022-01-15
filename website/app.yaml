@@ -4,7 +4,16 @@ handlers:
     static_files: build/index.html
     upload: build/index.html
     secure: always
-  - url: /(.*)$
+  - url: /static/(.*)$
+    static_files: build/static/\1
+    upload: build/static/(.*)
+    secure: always
+  - url: /(.*\.(json|ico|png|txt))$
     static_files: build/\1
-    upload: build/(.*)
+    upload: build/.*\.(json|ico|png|txt)$
+    secure: always
+  - url: .*
+    static_dir: build/static
+    static_files: build/index.html
+    upload: build/index.html
     secure: always
