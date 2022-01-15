@@ -11,10 +11,3 @@ steps:
   dir: 'website'
   entrypoint: yarn
   args: ['build']
-- name: gcr.io/google.com/cloudsdktool/cloud-sdk
-  entrypoint: 'gsutil'
-  args: ['rm', 'gs://homepage-338312_app/**']
-- name: gcr.io/google.com/cloudsdktool/cloud-sdk
-  dir: 'website/build'
-  entrypoint: 'gsutil'
-  args: ['cp', '-R', '*', 'gs://homepage-338312_app/']
