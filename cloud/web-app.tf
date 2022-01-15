@@ -39,11 +39,3 @@ resource "google_app_engine_domain_mapping" "stephan_tech" {
     ssl_management_type = "AUTOMATIC"
   }
 }
-
-resource "google_app_engine_domain_mapping" "www_stephan_tech" {
-  domain_name = "www.stephan.tech"
-
-  ssl_settings {
-    ssl_management_type = "AUTOMATIC"
-  }
-}
