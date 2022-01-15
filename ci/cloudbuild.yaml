@@ -11,3 +11,7 @@ steps:
   dir: 'website'
   entrypoint: yarn
   args: ['build']
+- name: node:16
+  entrypoint: echo
+  args: ['test1234']
+  
