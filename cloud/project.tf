@@ -26,8 +26,8 @@ resource "google_project_service" "cloud_build" {
   disable_on_destroy = true
 }
 
-resource "google_project_service" "storage" {
-  service = "storage.googleapis.com"
+resource "google_project_service" "app_engine" {
+  service = "appengine.googleapis.com"
 
   disable_dependent_services = true
   disable_on_destroy = true
