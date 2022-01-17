@@ -12,6 +12,7 @@ const expertise: BulletPointContent = [
         "Blockchain",
         [ "Ethereum", "Hyperledger Aries", "Hyperledger Indy"]
     ],
+    "REST and GraphQL",
     "DevOps",
     [ "Azure DevOps", "Google Cloud Build", "Terraform", "Locust (Load testing)" ],
     "Cloud Infrastructure",
