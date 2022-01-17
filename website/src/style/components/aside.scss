@@ -1,0 +1,12 @@
+.aside {
+  margin-left: 300px;
+
+  &__container {
+    position: fixed;
+    width: 300px;
+    top: 0;
+    left: 0;
+
+    padding: $navbar-padding-horizontal $navbar-padding-vertical;
+  }
+}

@@ -4,7 +4,6 @@ import { Navbar } from "../components";
 
 const Cv: React.FC = () =>
     <>
-        <Navbar />
         <section className="section">
             <div className="container">
                 <h2 className="title is-3">

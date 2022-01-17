@@ -5,9 +5,7 @@ import { Navbar } from "../components";
 const Start: React.FC = () =>
     <>
         <section className="hero is-primary">
-            <div className="hero-head">
-                <Navbar hero />
-            </div>
+            <div className="hero-head"></div>
             <div className="hero-body">
                 <div className="container has-text-right">
                     <h3 className="title is-1">
