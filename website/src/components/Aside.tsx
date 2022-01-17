@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink, NavLinkProps } from "react-router-dom";
+import { NavLink, NavLinkProps } from "react-router-dom";
 import cx from "classnames";
 
 const AsideLink: React.FC<NavLinkProps> = (linkProps) =>
