@@ -1,26 +1,76 @@
 .aside {
-  margin-left: 300px;
+  @include tablet {
+    margin-left: 300px;
+  }
 
   &__container {
-    position: fixed;
-    width: 300px;
-    top: 0;
-    left: 0;
-    
-    padding: $navbar-padding-horizontal $navbar-padding-vertical;
+    @include tablet {
+      position: fixed;
+      width: 300px;
+      top: 0;
+      left: 0;
+      
+      padding: $navbar-padding-horizontal $navbar-padding-vertical;
+    }
   }
 
   &__menu {
-    display: flex;
+    display: none;
     flex-direction: column;
+    position: absolute;
+
+    @include tablet {
+      display: flex;
+      position: static;
+    }
+
+    &.is-active {
+      display: flex;
+    }
   }
 
   &__link {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem;
     color: $dark;
+    
+    width: 100vw;
+    background-color: $light;
+    border-bottom: 1px solid $grey;
 
     &.is-active {
       font-weight: 600;
+    }
+
+    @include tablet {
+      width: initial;
+      background-color: initial;
+      border-bottom: initial;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $dark;
+
+    @include tablet {
+      background-color: initial;
+    }
+
+    & .navbar-burger {
+      color: $light;
+    }
+  }
+
+  &__brand-item {
+    font-size: $size-3;
+    padding: 0 $navbar-padding-horizontal / 2;
+    
+    @include tablet {
+      font-size: $size-2;
+      padding: 0;
     }
   }
 }

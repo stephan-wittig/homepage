@@ -10,14 +10,14 @@ const AsideLink: React.FC<NavLinkProps> = (linkProps) =>
     />;
 
 const Brand: React.FC = () => 
-    <h1 className="is-size-2 has-text-primary">
+    <div className="has-text-primary">
         <span className="has-text-weight-light">
             Stephan
         </span>
         <span className="has-text-weight-medium">
             Wittig
         </span>
-    </h1>;
+    </div>;
 
 const Aside: React.FC = () => {
     const [ menuDisplayed, setMenuDisplayed ] = React.useState(false);
@@ -31,7 +31,7 @@ const Aside: React.FC = () => {
     React.useEffect(() => {
         const className = menuDisplayed
             ? "app"
-            : "aside__arrow";
+            : "navbar-burger";
         
         const action = menuDisplayed
             ? closeMenu
@@ -60,9 +60,11 @@ const Aside: React.FC = () => {
 
                 <a 
                     role="button"
-                    className={cx("aside__arrow", {"is-active": menuDisplayed})}
+                    className={cx("navbar-burger", {"is-active": menuDisplayed})}
                 >
-                  
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
                 </a>
             </div>
 
