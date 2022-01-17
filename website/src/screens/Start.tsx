@@ -35,7 +35,7 @@ const interests: BulletPointContent = [
 
 const Start: React.FC = () =>
     <>
-        <section className="hero">
+        <section className="hero is-primary">
             <div className="hero-body">
                 <div className="container has-text-right">
                     <h3 className="title is-1">
