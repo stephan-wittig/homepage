@@ -6,7 +6,21 @@
     width: 300px;
     top: 0;
     left: 0;
-
+    
     padding: $navbar-padding-horizontal $navbar-padding-vertical;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    padding: 0.5rem 0;
+    color: $dark;
+
+    &.is-active {
+      font-weight: 600;
+    }
   }
 }

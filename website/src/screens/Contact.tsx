@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkedInLink, Navbar, SendEmailForm } from "../components";
+import { LinkedInLink, SendEmailForm } from "../components";
 
 const Contact: React.FC = () =>
     <>
