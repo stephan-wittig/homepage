@@ -17,7 +17,7 @@ const LinkedInLink: React.FC<Props> = ({ children }) =>
                 src={linkedInLogo}
                 alt=""
             />
-        </figure>{ children }
+        </figure> { children }
     </a>;
 
 export default LinkedInLink;

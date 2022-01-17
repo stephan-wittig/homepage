@@ -53,9 +53,7 @@ const Aside: React.FC = () => {
         <div className="aside__container has-background-light">
             <div className="aside__brand">
                 <div className="aside__brand-item">
-                    <Link to="/">
-                        <Brand />
-                    </Link>
+                    <Brand />
                 </div>
 
                 <a 
