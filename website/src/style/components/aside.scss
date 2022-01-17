@@ -5,6 +5,7 @@
 
   &__container {
     @include tablet {
+      min-height: 100vh;
       position: fixed;
       width: 300px;
       top: 0;
