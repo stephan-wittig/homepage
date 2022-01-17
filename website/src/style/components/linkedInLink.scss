@@ -1,14 +1,7 @@
 .linkedin-link {
-    display: inline-flex;
-    align-items: center;
-
     &__logo.image {
-        position: relative;
+        display: inline-block;
         top: 2px;
-        margin: {
-            left: 2px;
-            right: 2px;
-        }
     }
 
     &__background {

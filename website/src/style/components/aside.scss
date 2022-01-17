@@ -1,17 +1,26 @@
 .aside {
   @include tablet {
-    margin-left: 300px;
+    margin-left: 17rem;
+  }
+
+  @include desktop {
+    margin-left: 18rem;
   }
 
   &__container {
     @include tablet {
       min-height: 100vh;
       position: fixed;
-      width: 300px;
+      width: 17rem;
       top: 0;
       left: 0;
       
-      padding: $navbar-padding-horizontal $navbar-padding-vertical;
+      padding-top: 3rem;
+    }
+
+    @include desktop {
+      width: 18rem;
+      padding-left: 1rem;
     }
   }
 
@@ -33,7 +42,7 @@
   }
 
   &__link {
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 2rem;
     color: $dark;
     
     width: 100vw;
@@ -48,6 +57,7 @@
       width: initial;
       background-color: initial;
       border-bottom: initial;
+      padding: 0.5rem 1rem;
     }
   }
 
@@ -64,16 +74,20 @@
 
     & .navbar-burger {
       color: $light;
+
+      @include tablet {
+        display: none;
+      }
     }
   }
 
   &__brand-item {
     font-size: $size-3;
-    padding: 0 $navbar-padding-horizontal / 2;
+    padding: 0 1rem;
     
     @include tablet {
       font-size: $size-2;
-      padding: 0;
+      padding: 0 0.5rem;
     }
   }
 }
