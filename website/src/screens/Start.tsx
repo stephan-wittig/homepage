@@ -1,5 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BulletPointContent, BulletPoints } from "../components";
+
+const expertise: BulletPointContent = [
+    "Programming",
+    [
+        "Backend",
+        [ "Go", "Java", "C#"],
+        "Frontend",
+        [ "HTML, TypeScript and SASS", "React", "Angular", "Vue"],
+        "Blockchain",
+        [ "Ethereum", "Hyperledger Aries", "Hyperledger Indy"]
+    ],
+    "DevOps",
+    [ "Azure DevOps", "Google Cloud Build", "Terraform", "Locust (Load testing)" ],
+    "Cloud Infrastructure",
+    [ "Google Cloud Platform", "Microsoft Azure", "Amazon Web Services" ],
+    "Requirements analysis",
+    "Business process analysis",
+    "Project management",
+    [ "SCRUM Project Owner" ]
+]
+
+const interests: BulletPointContent = [
+    "Cool technology",
+    [ "Data Science", "Blockchain", "Cloud"],
+    "Economics",
+    "Politics",
+    "The outdoors",
+    [ "Hiking", "Sailing", "Travelling"],
+    "The indoors",
+    [ "Cooking", "Baking", "Whiskey and wine"]
+]
 
 const Start: React.FC = () =>
     <>
@@ -29,7 +61,12 @@ const Start: React.FC = () =>
                     Areas of Expertise
                 </h4>
                 <p className="block">
-                    Frontend and backend engineering. Leading projects. Requirement analysis. Devops. Digital identity and data protection. 
+                    Most recently, I worked as a software engineer but I'm also an experienced business analyst and project manager. Those are things and concepts I've worked with:
+                </p>
+                <p className="block">
+                    <BulletPoints
+                        content={expertise}
+                    />
                 </p>
                 <p className="block">
                     You'll find more about my technical abilities and my career <Link to="/cv">
@@ -44,7 +81,12 @@ const Start: React.FC = () =>
                     Interests and Hobbies
                 </h4>
                 <p className="block">
-                    Cool technology: Data Science, Cloud and Blockchain. Modern economics and politics. Sailing. Baking and cooking. Travelling the world (mostly Europe though).
+                    I'm interested in technology and the world beyond. I enjoy the little things in life, too, such as:
+                </p>
+                <p className="block">
+                    <BulletPoints
+                        content={interests}
+                    />
                 </p>
             </div>
         </section>
