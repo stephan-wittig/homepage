@@ -1,9 +1,8 @@
 import React from "react";
-import { LinkedInLink, Navbar, SendEmailForm } from "../components";
+import { LinkedInLink, SendEmailForm } from "../components";
 
 const Contact: React.FC = () =>
     <>
-        <Navbar />
         <section className="section">
             <div className="container block">
                 <h2 className="title is-3">

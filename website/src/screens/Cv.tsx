@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar } from "../components";
 
 const Cv: React.FC = () =>
     <>
-        <Navbar />
         <section className="section">
             <div className="container">
                 <h2 className="title is-3">

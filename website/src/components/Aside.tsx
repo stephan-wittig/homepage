@@ -2,30 +2,24 @@ import React from "react";
 import { Link, NavLink, NavLinkProps } from "react-router-dom";
 import cx from "classnames";
 
-interface Props {
-    hero?: boolean;
-}
-
-const NavbarLink: React.FC<NavLinkProps> = (linkProps) =>
+const AsideLink: React.FC<NavLinkProps> = (linkProps) =>
     <NavLink
         { ...linkProps }
-        className="navbar-item is-tab"
+        className="aside__link"
         activeClassName="is-active"
     />;
 
-type BrandProps = Pick<Props, "hero">; 
-
-const Brand: React.FC<BrandProps> = ( { hero } ) => 
-    <h1 className={cx(hero ? "is-size-2 has-text-light" : "is-size-4 has-text-primary")}>
+const Brand: React.FC = () => 
+    <div className="has-text-primary">
         <span className="has-text-weight-light">
             Stephan
         </span>
         <span className="has-text-weight-medium">
             Wittig
         </span>
-    </h1>;
+    </div>;
 
-const Navbar: React.FC<Props> = ({ hero }) => {
+const Aside: React.FC = () => {
     const [ menuDisplayed, setMenuDisplayed ] = React.useState(false);
     const openMenu = React.useCallback(() => {
         setMenuDisplayed(true);
@@ -55,45 +49,38 @@ const Navbar: React.FC<Props> = ({ hero }) => {
         }
     }, [ menuDisplayed, closeMenu, openMenu ]);
 
-
-
-    return <nav className={cx("navbar", { "is-dark": !hero})}>
-        <div className="navbar__container container">
-            <div className="navbar-brand">
-                <div className="navbar__brand-item navbar-item">
-                    {hero
-                        ? <Brand hero />
-                        : <Link to="/">
-                            <Brand />
-                        </Link>
-                    }
+    return <nav className="aside">
+        <div className="aside__container">
+            <div className="aside__brand">
+                <div className="aside__brand-item">
+                    <Link to="/">
+                        <Brand />
+                    </Link>
                 </div>
 
                 <a 
                     role="button"
                     className={cx("navbar-burger", {"is-active": menuDisplayed})}
                 >
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
                 </a>
             </div>
 
-            <div className={cx("navbar-menu", {"is-active": menuDisplayed})}>
-                <div className="navbar-end">
-                    <NavbarLink exact to="/">
+            <div className={cx("aside__menu", {"is-active": menuDisplayed})}>
+                    <AsideLink exact to="/">
                         Start
-                    </NavbarLink>
-                    <NavbarLink to="/cv">
+                    </AsideLink>
+                    <AsideLink to="/cv">
                         CV
-                    </NavbarLink>
-                    <NavbarLink to="/contact">
+                    </AsideLink>
+                    <AsideLink to="/contact">
                         Contact
-                    </NavbarLink>
-                </div>
+                    </AsideLink>
             </div>
         </div>
     </nav>;
 };
 
-export default Navbar;
+export default Aside;
