@@ -50,7 +50,7 @@ const Aside: React.FC = () => {
     }, [ menuDisplayed, closeMenu, openMenu ]);
 
     return <nav className="aside">
-        <div className="aside__container">
+        <div className="aside__container has-background-light">
             <div className="aside__brand">
                 <div className="aside__brand-item">
                     <Link to="/">

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer: React.FC = () =>
-    <footer className="footer">
+    <footer className="footer has-background-light">
         <div className="footer__content">
             <div className="block">
                 Developed by Stephan Wittig.
