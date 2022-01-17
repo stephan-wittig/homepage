@@ -18,10 +18,12 @@
     display: none;
     flex-direction: column;
     position: absolute;
+    z-index: 40;
 
     @include tablet {
       display: flex;
       position: static;
+      z-index: initial;
     }
 
     &.is-active {
