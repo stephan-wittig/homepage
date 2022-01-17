@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { LinkedInLink } from "../components";
 
 const Cv: React.FC = () =>
     <>
@@ -14,7 +15,11 @@ const Cv: React.FC = () =>
                     </Link>. 
                 </p>
                 <p className="block">
-                    The CV. Really well presented with two time bars and stuff.
+                    <div className="message is-warning">
+                        <div className="message-body">
+                        I will add my CV here soon-ish. Most of it is already on LinkedIn™: <LinkedInLink>stephan-wittig</LinkedInLink>
+                        </div>
+                    </div>
                 </p>
             </div>
         </section>

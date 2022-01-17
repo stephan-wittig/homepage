@@ -25,8 +25,7 @@ const expertise: BulletPointContent = [
 const interests: BulletPointContent = [
     "Cool technology",
     [ "Data Science", "Blockchain", "Cloud"],
-    "Economics",
-    "Politics",
+    "Economics and politics",
     "The outdoors",
     [ "Hiking", "Sailing", "Travelling"],
     "The indoors",
