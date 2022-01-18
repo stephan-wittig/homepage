@@ -5,7 +5,7 @@ import { LinkedInLink } from "../components";
 const Cv: React.FC = () =>
     <>
         <section className="section">
-            <div className="container">
+            <div className="container is-max-desktop">
                 <h2 className="title is-3">
                     Curriculum Vitae
                 </h2>
