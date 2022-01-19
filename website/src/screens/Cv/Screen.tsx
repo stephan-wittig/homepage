@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LinkedInLink } from "../components";
+import { LinkedInLink } from "../../components";
 
 const Cv: React.FC = () =>
     <>
