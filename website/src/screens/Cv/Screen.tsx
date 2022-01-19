@@ -37,7 +37,7 @@ const Cv: React.FC = () =>
                 At Frankfurt School of Finance &amp; Management &hellip;
             </div>
         </Segment>
-        <Segment title="London and Breaking Wave" dateRange={["Aug 2019", "Sep 2021"]}>
+        <Segment title="&#127754; Breaking Wave" dateRange={["Aug 2019", "Sep 2021"]}>
             <div>
                 I moved to London to work at Breaking Wave, a subsidiary of Deutsche Bank that works with new technologies using agile rapid-prototyping approaches.
                 I joined just after this new team was created, first as an engineer seconded from Deutsche Bank.
