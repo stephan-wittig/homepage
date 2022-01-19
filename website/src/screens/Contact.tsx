@@ -4,7 +4,7 @@ import { LinkedInLink, SendEmailForm } from "../components";
 const Contact: React.FC = () =>
     <>
         <section className="section">
-            <div className="container block">
+            <div className="container block is-max-desktop">
                 <h2 className="title is-3">
                     Contact me
                 </h2>

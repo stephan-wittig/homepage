@@ -1,6 +1,9 @@
 resource "google_cloudbuild_trigger" "deploy_website" {
   name     = "deploy-website"
-  filename = "ci/cloudbuild.yaml"
+  filename = "website/cloudbuild.yaml"
+  included_files = [
+    "website/**"
+  ]
 
   github {
     owner = "stephan-wittig"
