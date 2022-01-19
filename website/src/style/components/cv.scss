@@ -1,0 +1,19 @@
+.cv {
+  &__date-range.column {
+    padding-bottom: 0;
+  }
+
+  &__segment.column {
+    padding-top: 0.25rem;
+  }
+
+  @include desktop {
+    &__date-range.column {
+      padding-bottom: 0.75rem;
+    }
+  
+    &__segment.column {
+      padding-top: 0.75rem;
+    }
+  }
+}
