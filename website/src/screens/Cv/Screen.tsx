@@ -25,46 +25,66 @@ const Cv: React.FC = () =>
                 <Header level={2}>
                     Deutsche Bank
                 </Header>
-                <Segment title="Frankfurt School and Deutsche Bank" dateRange={["Aug 2015", "Jul 2019"]}>
+
+                <Segment title="Duales Studium and Apprenticeship" dateRange={["Aug 2015", "Jul 2017"]}>
                     <div>
                         A &quot;Duales Studium&quot; is a university programme accompanied by practical work.
-                        In my case, I studied Information Systems at <em>Frankfurt School of Finance &amp; Management</em> and worked in the IT department of <em>Deutsche Bank</em>'s retail bank.
+                        In my case, I worked in the IT department of Deutsche Bank's retail bank in Eschborn.
                     </div>
                     <div>
-                        In Deutsche Bank's office in Eschborn (near Frankfurt) I received training as a <em>Computer Science Expert</em> apprentice.
+                        I received training as a <em>Computer Science Expert</em> apprentice.
                         In this two-year programme, I worked in multiple roles of the software development cycle and gathered experience in requirements analysis, programming, testing, IT architecture and project management.
                     </div>
                     <div>
                         I also chose to undertake two placements, one in business architecture in Frankfurt, and the other one in the chief digital office in London.
                     </div>
+                </Segment>
+                <Segment title="Business Functional Analyst" dateRange={["Jul 2017", "Jul 2019"]}>
                     <div>
-                        After graduating as apprentice with the highest possible grade in 2017, I continued working as Business Analyst.
-                        In multiple projects, I analysed business processes and requirements, especially in the area of data governance and data protection.
-                        I also supported our project management and managed smaller projects myself.
+                        After finishing the apprenticeship programme, I continued work as Business Functional Analyst for Deutsche Bank's document management system.
+                        Until the end my study programme in Jan 2019, I have worked 3 days per week. Afterwards, I was employed on a full-time basis.
                     </div>
                     <div>
-                        At Frankfurt School of Finance &amp; Management &hellip;
+                        As a Business Analyst, I analysed requirements and business processes. Also, I coordinated work between our develpment team and those of our customers.
+                        Aside from regular feature releases, most of my time was spent on planning the adjustments for complying with <em>EU GDPR</em>.
+                    </div>
+                    <div>
+                        Furthermore, during my time as Business Analyst, I supported our project management and managed small projects on my own.
                     </div>
                 </Segment>
                 <Header level={2}>
-                    Breaking Wave
+                    &#127754; Breaking Wave
                 </Header>
-                <Segment title="&#127754; Breaking Wave" dateRange={["Aug 2019", "Sep 2021"]}>
+                <Segment title="Software Engineer" dateRange={["Aug 2019", "Sep 2021"]}>
                     <div>
-                        I moved to London to work at Breaking Wave, a subsidiary of Deutsche Bank that works with new technologies using agile rapid-prototyping approaches.
+                        This subsidiary of Deutsche Bank works with new technologies using agile rapid-prototyping approaches.
                         I joined just after this new team was created, first as an engineer seconded from Deutsche Bank.
                         From Jan 2020, I was directly employed by Breaking Wave.
-                        &hellip;
+                    </div>
+                    <div>
+                        I developed software for multiple projects around Digital Assets, Digital Identity and the Internet of Things.
+                        I also configured testing and supported IT operations using a set of DevOps tools, for instance <em>Azure DevOps</em> and <em>Terraform</em>.
+                        Most of my time was spent working on web frontends using <em>React</em> or <em>Vue</em>, but I created
+                        backend APIs, too, using <em>Java</em>, <em>Go</em> and <em>C#</em>.
                     </div>
                 </Segment>
                 <Header level={1}>
                     Education
                 </Header>
-                <Segment title="London School of Economics" dateRange={["Sep 2021", "Aug 2022"]}>
+                <Segment title="MSc in Management of Information Systems and Digital Innovation" dateRange={["Sep 2021", "Aug 2022"]}>
                     <div>
-                        Having learned a lot about technology as an engineer, I decided to learn more about its social aspects.
-                        That is why I went back to university for an MSc in Management of Information Systems and Digital Innovation.
-                        &hellip;
+                        At <em>London School of Economics and Political Science</em>
+                    </div>
+                    <div>
+                        &#10084;-Courses: Data Governance, Service Design
+                    </div>
+                </Segment>
+                <Segment title="BSc in Business Administration With Focus on Business Information Systems" dateRange={["Sep 2015", "Jan 2019"]}>
+                    <div>
+                        At <em>Frankfurt School of Finance &amp; Management</em>
+                    </div>
+                    <div>
+                        &#10084;-Courses: Innovation Management, Monetary Theory and Policy, Enterprise Architecture Management, Practical Project (Blockchain)
                     </div>
                 </Segment>
             </div>
