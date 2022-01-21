@@ -5,7 +5,7 @@ const Contact: React.FC = () =>
     <>
         <section className="section">
             <div className="container block is-max-desktop">
-                <h2 className="title is-3">
+                <h2 className="title is-2">
                     Contact me
                 </h2>
                 <div className="block">

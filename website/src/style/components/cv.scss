@@ -7,6 +7,11 @@
     padding-top: 0.25rem;
   }
 
+  &__subheader.block {
+    margin-top: -1.25rem;
+    margin-bottom: 0;
+  }
+
   @include desktop {
     &__date-range.column {
       padding-bottom: 0.75rem;
