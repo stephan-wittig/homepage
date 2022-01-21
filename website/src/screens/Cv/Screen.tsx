@@ -23,36 +23,6 @@ const Cv: React.FC = () =>
                     Professional Experience
                 </Header>
                 <Header level={2}>
-                    Deutsche Bank
-                </Header>
-
-                <Segment title="Duales Studium and Apprenticeship" dateRange={["Aug 2015", "Jul 2017"]}>
-                    <div>
-                        A &quot;Duales Studium&quot; is a university programme accompanied by practical work.
-                        In my case, I worked in the IT department of Deutsche Bank's retail bank in Eschborn.
-                    </div>
-                    <div>
-                        I received training as a <em>Computer Science Expert</em> apprentice.
-                        In this two-year programme, I worked in multiple roles of the software development cycle and gathered experience in requirements analysis, programming, testing, IT architecture and project management.
-                    </div>
-                    <div>
-                        I also chose to undertake two placements, one in business architecture in Frankfurt, and the other one in the chief digital office in London.
-                    </div>
-                </Segment>
-                <Segment title="Business Functional Analyst" dateRange={["Jul 2017", "Jul 2019"]}>
-                    <div>
-                        After finishing the apprenticeship programme, I continued work as Business Functional Analyst for Deutsche Bank's document management system.
-                        Until the end my study programme in Jan 2019, I have worked 3 days per week. Afterwards, I was employed on a full-time basis.
-                    </div>
-                    <div>
-                        As a Business Analyst, I analysed requirements and business processes. Also, I coordinated work between our develpment team and those of our customers.
-                        Aside from regular feature releases, most of my time was spent on planning the adjustments for complying with <em>EU GDPR</em>.
-                    </div>
-                    <div>
-                        Furthermore, during my time as Business Analyst, I supported our project management and managed small projects on my own.
-                    </div>
-                </Segment>
-                <Header level={2}>
                     &#127754; Breaking Wave
                 </Header>
                 <Segment title="Software Engineer" dateRange={["Aug 2019", "Sep 2021"]}>
@@ -66,6 +36,35 @@ const Cv: React.FC = () =>
                         I also configured testing and supported IT operations using a set of DevOps tools, for instance <em>Azure DevOps</em> and <em>Terraform</em>.
                         Most of my time was spent working on web frontends using <em>React</em> or <em>Vue</em>, but I created
                         backend APIs, too, using <em>Java</em>, <em>Go</em> and <em>C#</em>.
+                    </div>
+                </Segment>
+                <Header level={2}>
+                    Deutsche Bank
+                </Header>
+                <Segment title="Business Functional Analyst" dateRange={["Jul 2017", "Jul 2019"]}>
+                    <div>
+                        After finishing the apprenticeship programme, I continued work as Business Functional Analyst for Deutsche Bank's document management system.
+                        Until the end my study programme in Jan 2019, I have worked 3 days per week. Afterwards, I was employed on a full-time basis.
+                    </div>
+                    <div>
+                        As a Business Analyst, I analysed requirements and business processes. Also, I coordinated work between our develpment team and those of our customers.
+                        Aside from regular feature releases, most of my time was spent on planning the adjustments for complying with <em>EU GDPR</em>.
+                    </div>
+                    <div>
+                        Furthermore, during my time as Business Analyst, I supported our project management and managed small projects on my own.
+                    </div>
+                </Segment>
+                <Segment title="Duales Studium and Apprenticeship" dateRange={["Aug 2015", "Jul 2017"]}>
+                    <div>
+                        A &quot;Duales Studium&quot; is a university programme accompanied by practical work.
+                        In my case, I worked in the IT department of Deutsche Bank's retail bank in Eschborn.
+                    </div>
+                    <div>
+                        I received training as a <em>Computer Science Expert</em> apprentice.
+                        In this two-year programme, I worked in multiple roles of the software development cycle and gathered experience in requirements analysis, programming, testing, IT architecture and project management.
+                    </div>
+                    <div>
+                        I also chose to undertake two placements, one in business architecture in Frankfurt, and the other one in the chief digital office in London.
                     </div>
                 </Segment>
                 <Header level={1}>
