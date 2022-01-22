@@ -14,3 +14,20 @@ resource "google_cloudbuild_trigger" "deploy_website" {
     }
   }
 }
+
+resource "google_cloudbuild_trigger" "deploy_api" {
+  name     = "deploy-backend"
+  filename = "api/cloudbuild.yaml"
+  included_files = [
+    "api/**"
+  ]
+
+  github {
+    owner = "stephan-wittig"
+    name  = "homepage"
+
+    push {
+      branch = "^main$"
+    }
+  }
+}
