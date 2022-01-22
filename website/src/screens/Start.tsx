@@ -12,6 +12,7 @@ const expertise: BulletPointContent = [
         "Blockchain",
         [ "Ethereum", "Hyperledger Aries", "Hyperledger Indy"]
     ],
+    "REST and GraphQL",
     "DevOps",
     [ "Azure DevOps", "Google Cloud Build", "Terraform", "Locust (Load testing)" ],
     "Cloud Infrastructure",
@@ -36,7 +37,7 @@ const Start: React.FC = () =>
     <>
         <section className="hero is-primary">
             <div className="hero-body">
-                <div className="container has-text-right">
+                <div className="container has-text-right is-max-desktop">
                     <h3 className="title is-1">
                         Software Development Specialist
                     </h3>
@@ -47,7 +48,7 @@ const Start: React.FC = () =>
             </div>
             <div className="hero-footer">
                 <section className="section">
-                    <div className="container is-size-4 has-text-weight-medium">
+                    <div className="container is-size-4 has-text-weight-medium is-max-desktop">
                         Welcome to my homepage. I'm a software engineer currently studying at London School of Economics.
                         Before that, I used to work at Breaking Wave and Deutsche Bank.
                     </div>
@@ -55,7 +56,7 @@ const Start: React.FC = () =>
             </div>
         </section>
         <section className="section">
-            <div className="container">
+            <div className="container is-max-desktop">
                 <h4 className="title is-3">
                     Areas of Expertise
                 </h4>
@@ -75,7 +76,7 @@ const Start: React.FC = () =>
             </div>
         </section>
         <section className="section">
-            <div className="container">
+            <div className="container is-max-desktop">
                 <h4 className="title is-3">
                     Interests and Hobbies
                 </h4>
