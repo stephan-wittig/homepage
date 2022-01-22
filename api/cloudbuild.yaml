@@ -4,6 +4,6 @@ steps:
   entrypoint: go
   args: ['get']
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-  dir: 'website'
+  dir: 'api'
   entrypoint: 'gcloud'
   args: ['app', 'deploy', '--stop-previous-version']
