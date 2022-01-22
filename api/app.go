@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -13,7 +14,7 @@ import (
 type App struct {
 	Router    *mux.Router
 	handlers  handlers.Handlers
-	port      uint64
+	port      string
 	validator *validator.Validate
 }
 
@@ -23,6 +24,7 @@ func (a *App) Initialize() {
 		port = "8080"
 		log.Printf("Defaulting to port %s", port)
 	}
+	a.port = port
 
 	a.handlers = handlers.New()
 
@@ -33,6 +35,6 @@ func (a *App) Initialize() {
 }
 
 func (a *App) Run() {
-	err := http.ListenAndServe(":80", a.Router)
+	err := http.ListenAndServe(fmt.Sprintf(":%s", a.port), a.Router)
 	log.Fatal(err)
 }
