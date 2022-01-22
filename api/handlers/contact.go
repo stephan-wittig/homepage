@@ -1,14 +1,27 @@
 package handlers
 
 import (
-	"fmt"
+	"encoding/json"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"github.com/stephan-wittig/homepage/api/connectors"
+	"github.com/stephan-wittig/homepage/api/models"
 )
 
 func Contact(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
+	var m models.Message
+
+	err := json.NewDecoder(r.Body).Decode(&m)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusUnprocessableEntity)
+		return
+	}
+
+	err = connectors.SendEmail(m)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "Category: %v\n", vars["category"])
 }

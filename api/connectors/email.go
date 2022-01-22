@@ -6,6 +6,7 @@ import (
 	"github.com/stephan-wittig/homepage/api/models"
 )
 
-func Send(m models.Message) {
+func SendEmail(m models.Message) error {
 	fmt.Printf("%+v", m)
+	return nil
 }
