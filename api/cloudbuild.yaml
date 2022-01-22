@@ -1,0 +1,9 @@
+steps:
+- name: golang:1.17
+  dir: 'api'
+  entrypoint: go
+  args: ['get']
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  dir: 'website'
+  entrypoint: 'gcloud'
+  args: ['app', 'deploy', '--stop-previous-version']

@@ -1,2 +1,5 @@
 runtime: go117
-service: backend
+service: api
+instance_class: F1
+automatic_scaling:
+  max_instances: 1
