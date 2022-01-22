@@ -29,7 +29,7 @@ func (a *App) Initialize() {
 	a.handlers = handlers.New()
 
 	r := mux.NewRouter()
-	r.HandleFunc("/contact", a.handlers.Contact)
+	r.Methods("POST").Path("/contact").HandlerFunc(a.handlers.Contact)
 
 	a.Router = r
 }
