@@ -6,4 +6,4 @@ steps:
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk
   dir: 'api'
   entrypoint: 'gcloud'
-  args: ['app', 'deploy', '--stop-previous-version']
+  args: ['app', 'deploy', '--stop-previous-version', 'app.yaml', 'dispatch.yaml']
