@@ -1,4 +1,4 @@
-runtime: go117
+runtime: go116
 service: api
 instance_class: F1
 automatic_scaling:
