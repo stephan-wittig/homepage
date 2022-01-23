@@ -1,4 +1,5 @@
 import { useMutation, UseMutationResult } from "react-query";
+import * as yup from "yup";
 import { HttpError } from "./error";
 
 export interface ContactRequest {
@@ -6,6 +7,23 @@ export interface ContactRequest {
   senderEmail: string;
   subject: string;
 }
+
+export const ContactRequestSchema: yup.SchemaOf<ContactRequest> = yup.object({
+  content: yup.string()
+    .trim()
+    .min(2)
+    .max(512)
+    .required(),
+  senderEmail: yup.string()
+    .trim()
+    .email()
+    .required(),
+  subject: yup.string()
+    .trim()
+    .min(2)
+    .max(64)
+    .required()
+});
 
 async function contact (params: ContactRequest) {
   const body = JSON.stringify(params);

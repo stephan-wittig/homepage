@@ -1,4 +1,4 @@
 import { HttpError } from "./error";
-import { useContact } from "./contact";
+import { useContact, ContactRequestSchema, ContactRequest } from "./contact";
 
-export { HttpError, useContact };
+export { HttpError, useContact, ContactRequestSchema, type ContactRequest };
