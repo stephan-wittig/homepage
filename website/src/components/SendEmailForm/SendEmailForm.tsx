@@ -59,14 +59,34 @@ const SendEmailForm: React.FC = () => {
                         type="reset"
                     >Clear form</button>
                     <button
-                        className={cx("button", {
+                        className={cx("button is-primary", {
                             "is-loading": isLoading,
-                            "is-primary": !isSuccess,
-                            "is-success": isSuccess
+                            "is-hidden": isSuccess
                         })}
                         disabled={isSuccess}
                         type="submit"
-                    >Send</button>
+                    >
+                        <span className="icon is-small">
+                            <i className="fas fa-envelope"></i>
+                        </span>
+                        <span>
+                            Send
+                        </span>
+                    </button>
+                    <button
+                        className={cx("button is-success has-text-white", {
+                            "is-hidden": !isSuccess
+                        })}
+                        type="button"
+                        disabled
+                    >
+                        <span className="icon is-small">
+                            <i className="fas fa-check"></i>
+                        </span>
+                        <span>
+                            Sent
+                        </span>
+                    </button>
                 </div>
             </Form>
         </Formik>
