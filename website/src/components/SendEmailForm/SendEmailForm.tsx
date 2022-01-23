@@ -3,6 +3,7 @@ import React from "react";
 import { ContactRequest, useContact, ContactRequestSchema } from "../../api";
 import TextField from "./TextField";
 import cx from "classnames";
+import TextArea from "./TextArea";
 
 const initialValues: ContactRequest = {
     content: "",
@@ -37,6 +38,11 @@ const SendEmailForm: React.FC = () => {
                     name="subject"
                     type="text"
                     label="Subject"
+                />
+                <TextArea
+                    name="content"
+                    type="text"
+                    label="Message"
                 />
                 <div className="buttons is-right">
                     <button
