@@ -37,16 +37,22 @@ const SendEmailForm: React.FC = () => {
                         Your message was sent. Thank you!
                     </div>
                 </div>
-                <TextField
-                    name="senderEmail"
-                    type="email"
-                    label="Your email address"
-                />
-                <TextField
-                    name="subject"
-                    type="text"
-                    label="Subject"
-                />
+                <div className="columns">
+                    <div className="column">
+                        <TextField
+                            name="senderEmail"
+                            type="email"
+                            label="Your email address"
+                        />
+                    </div>
+                    <div className="column">
+                        <TextField
+                            name="subject"
+                            type="text"
+                            label="Subject"
+                        />
+                    </div>
+                </div>
                 <TextArea
                     name="content"
                     label="Message"
