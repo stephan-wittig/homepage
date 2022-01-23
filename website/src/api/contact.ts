@@ -13,16 +13,19 @@ export const ContactRequestSchema: yup.SchemaOf<ContactRequest> = yup.object({
     .trim()
     .min(2)
     .max(512)
-    .required(),
+    .required()
+    .label("Message"),
   senderEmail: yup.string()
     .trim()
     .email()
-    .required(),
+    .required()
+    .label("Email address"),
   subject: yup.string()
     .trim()
     .min(2)
     .max(64)
     .required()
+    .label("Subject")
 });
 
 async function contact (params: ContactRequest) {
