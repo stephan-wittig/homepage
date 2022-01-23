@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/go-playground/validator/v10"
+	gorilla_handlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/stephan-wittig/homepage/api/handlers"
 )
@@ -29,7 +30,13 @@ func (a *App) Initialize() {
 	a.handlers = handlers.New()
 
 	r := mux.NewRouter()
-	r.Methods("POST").Path("/api/contact").HandlerFunc(a.handlers.Contact)
+	cors := gorilla_handlers.CORS(
+		gorilla_handlers.AllowedHeaders([]string{"Content-Type"}),
+		gorilla_handlers.AllowedMethods([]string{http.MethodPost}),
+	)
+	r.Use(cors)
+
+	r.Methods(http.MethodPost, http.MethodOptions).Path("/api/contact").HandlerFunc(a.handlers.Contact)
 
 	a.Router = r
 }
