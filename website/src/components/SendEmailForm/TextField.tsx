@@ -1,5 +1,5 @@
 import React from "react";
-import { FieldConfig, useField } from "formik";
+import { FieldConfig, useField, useFormikContext } from "formik";
 import cx from "classnames";
 
 interface OwnProps {
@@ -10,6 +10,7 @@ type Props = OwnProps & FieldConfig<string>;
 
 const TextField: React.FC<Props> = ({ label, ...restProps }) => {
   const [ field, meta ] = useField(restProps);
+  const { isSubmitting } = useFormikContext();
   const renderInvalid = meta.touched && meta.error;
   const renderValid = meta.touched && !renderInvalid;
   const id = `text-field_${field.name}`;
@@ -27,6 +28,7 @@ const TextField: React.FC<Props> = ({ label, ...restProps }) => {
         id={id}
         {...restProps}
         {...field}
+        disabled={isSubmitting}
       />
     </div>
     <p

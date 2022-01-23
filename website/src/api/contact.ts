@@ -31,7 +31,7 @@ export const ContactRequestSchema: yup.SchemaOf<ContactRequest> = yup.object({
 async function contact (params: ContactRequest) {
   const body = JSON.stringify(params);
   
-  const res = await fetch("stephan.tech/api/contact", {
+  const res = await fetch("https://stephan.tech/api/contact", {
     headers: {
       "Content-Type": "application/json",
       "Content-Length": body.length.toString(10)

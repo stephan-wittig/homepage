@@ -12,23 +12,31 @@ const initialValues: ContactRequest = {
 }
 
 const SendEmailForm: React.FC = () => {
-    const { mutate, isLoading } = useContact();
+    const { mutateAsync, isLoading, isError, isSuccess, reset } = useContact();
 
-    return <>
-        <div className="block">
-            <div className="message is-warning">
-                <div className="message-body">
-                    The form for sending emails is currently under construction. 
-                    Please return later or use LinkedIn to contact me. Thank you for your interest!
-                </div>
-            </div>
-        </div>
-        <Formik 
+    return <div className="block">
+        <Formik
             initialValues={initialValues}
-            validationSchema={ContactRequestSchema}
-            onSubmit={(values) => mutate(values)}
+            validationSchema={ContactRequestSchema.required()}
+            onSubmit={async (values) => {
+                const castedValues = ContactRequestSchema.validateSync(values);
+                await  mutateAsync(castedValues);
+            }}
+            onReset={() => {
+                reset();
+            }}
         >
             <Form>
+                <div className={cx("message is-danger", { "is-hidden": !isError})}>
+                    <div className="message-body">
+                        There was a problem with sending your message. Please try again later.
+                    </div>
+                </div>
+                <div className={cx("message is-success", { "is-hidden": !isSuccess})}>
+                    <div className="message-body">
+                        Your message was sent. Thank you!
+                    </div>
+                </div>
                 <TextField
                     name="senderEmail"
                     type="email"
@@ -41,19 +49,28 @@ const SendEmailForm: React.FC = () => {
                 />
                 <TextArea
                     name="content"
-                    type="text"
                     label="Message"
                 />
                 <div className="buttons is-right">
                     <button
-                        className={cx("button is-primary", {
+                        className={cx("button is-primary is-outlined", {
                             "is-loading": isLoading
                         })}
+                        type="reset"
+                    >Clear form</button>
+                    <button
+                        className={cx("button", {
+                            "is-loading": isLoading,
+                            "is-primary": !isSuccess,
+                            "is-success": isSuccess
+                        })}
+                        disabled={isSuccess}
+                        type="submit"
                     >Send</button>
                 </div>
             </Form>
         </Formik>
-    </>;
+    </div>;
 }
 
 export default SendEmailForm;
