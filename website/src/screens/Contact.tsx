@@ -15,6 +15,14 @@ const Contact: React.FC = () =>
                     Or you could use the following form to send me an email. Generally, I try to answer within a few days.
                 </div>
             </div>
+            <div className="block container is-max-desktop">
+                <div className="message is-warning">
+                    <div className="message-body">
+                        The form for sending emails is currently under construction. 
+                        Please return later or use LinkedIn to contact me. Thank you for your interest!
+                    </div>
+                </div>
+            </div>
             <div className="container block is-max-desktop">
                 <SendEmailForm />
             </div>
