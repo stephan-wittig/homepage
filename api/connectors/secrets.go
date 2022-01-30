@@ -21,7 +21,6 @@ func NewSecretManager(ctx context.Context) (SecretManager, error) {
 		return SecretManager{}, fmt.Errorf("EnvVar GOOGLE_CLOUD_PROJECT not found")
 	}
 
-	// Create the client.
 	client, err := secretmanager.NewClient(ctx)
 	if err != nil {
 		return SecretManager{}, err
@@ -35,7 +34,6 @@ func NewSecretManager(ctx context.Context) (SecretManager, error) {
 }
 
 func (sm *SecretManager) GetSecret(ctx context.Context, id string) (string, error) {
-	// Create the request to create the secret.
 	accVersionReq := &secretmanagerpb.AccessSecretVersionRequest{
 		Name: fmt.Sprintf("projects/%s/versions/%s/latest", sm.project, id),
 	}
