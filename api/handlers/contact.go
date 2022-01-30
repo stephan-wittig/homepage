@@ -29,7 +29,7 @@ func (h *Handlers) Contact(w http.ResponseWriter, r *http.Request) {
 
 	err = h.emailClient.SendEmail(m)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "Internal Server Error. Please try again later", http.StatusInternalServerError)
 		return
 	}
 
