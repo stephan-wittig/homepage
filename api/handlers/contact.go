@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 
 	"github.com/go-playground/validator/v10"
@@ -29,6 +30,7 @@ func (h *Handlers) Contact(w http.ResponseWriter, r *http.Request) {
 
 	err = h.emailClient.SendEmail(m)
 	if err != nil {
+		log.Printf("Handling contact attempt failed: %s", err.Error())
 		http.Error(w, "Internal Server Error. Please try again later", http.StatusInternalServerError)
 		return
 	}
