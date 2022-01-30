@@ -20,18 +20,22 @@ type App struct {
 }
 
 func (a *App) Initialize() error {
-	port := os.Getenv("PORT")
-	if port == "" {
+	log.Printf("Initializing app")
+
+	port, exists := os.LookupEnv("PORT")
+	if !exists {
 		port = "8080"
-		log.Printf("Defaulting to port %s", port)
+		log.Printf("EnvVar PORT not found. Using default")
 	}
 	a.port = port
+	log.Printf("Using port %s", port)
 
 	var err error
 	a.handlers, err = handlers.New()
 	if err != nil {
 		return err
 	}
+	log.Printf("Initialized handlers")
 
 	r := mux.NewRouter()
 	cors := gorilla_handlers.CORS(
@@ -43,6 +47,7 @@ func (a *App) Initialize() error {
 	r.Methods(http.MethodPost, http.MethodOptions).Path("/api/contact").HandlerFunc(a.handlers.Contact)
 
 	a.Router = r
+	log.Printf("Initialized router")
 
 	return nil
 }

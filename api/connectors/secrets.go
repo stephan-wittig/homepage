@@ -35,7 +35,7 @@ func NewSecretManager(ctx context.Context) (SecretManager, error) {
 
 func (sm *SecretManager) GetSecret(ctx context.Context, id string) (string, error) {
 	accVersionReq := &secretmanagerpb.AccessSecretVersionRequest{
-		Name: fmt.Sprintf("projects/%s/versions/%s/latest", sm.project, id),
+		Name: fmt.Sprintf("projects/%s/secrets/%s/versions/latest", sm.project, id),
 	}
 
 	accVersionRes, err := sm.client.AccessSecretVersion(ctx, accVersionReq)
@@ -52,16 +52,18 @@ func (sm *SecretManager) GetSecrets(ctx context.Context, ids []string) (map[stri
 	wg := sync.WaitGroup{}
 	wg.Add(len(ids))
 
-	go func(wg sync.WaitGroup, errs chan error) {
+	// Close errs channel when all tasks are done
+	go func() {
 		wg.Wait()
 		close(errs)
-	}(wg, errs)
+	}()
 
 	for _, id := range ids {
 		go func(id string) {
 			defer wg.Done()
 			secret, err := sm.GetSecret(ctx, id)
 			if err != nil {
+				errs <- err
 				return
 			}
 
@@ -69,6 +71,7 @@ func (sm *SecretManager) GetSecrets(ctx context.Context, ids []string) (map[stri
 		}(id)
 	}
 
+	// Wait until channel is closed or error is received
 	err := <-errs
 	if err != nil {
 		return nil, err
