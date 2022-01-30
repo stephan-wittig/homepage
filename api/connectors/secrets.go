@@ -43,7 +43,7 @@ func (sm *SecretManager) GetSecret(ctx context.Context, id string) (string, erro
 		return "", err
 	}
 
-	return accVersionRes.GetPayload().String(), nil
+	return string(accVersionRes.GetPayload().GetData()), nil
 }
 
 func (sm *SecretManager) GetSecrets(ctx context.Context, ids []string) (map[string]string, error) {
