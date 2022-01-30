@@ -1,5 +1,5 @@
 locals {
-  email_secret_ids = toSet([
+  email_secret_ids = toset([
     "EMAIL_HOST",
     "EMAIL_USERNAME",
     "EMAIL_PASSWORD",
