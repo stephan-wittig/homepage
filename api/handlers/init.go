@@ -8,14 +8,16 @@ import (
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
 	en_translations "github.com/go-playground/validator/v10/translations/en"
+	"github.com/stephan-wittig/homepage/api/connectors"
 )
 
 type Handlers struct {
-	validator  *validator.Validate
-	translator *ut.UniversalTranslator
+	validator   *validator.Validate
+	translator  *ut.UniversalTranslator
+	emailClient *connectors.EmailClient
 }
 
-func New() Handlers {
+func New() (Handlers, error) {
 	validate := validator.New()
 	validate.RegisterTagNameFunc(func(fld reflect.StructField) string {
 		name := strings.SplitN(fld.Tag.Get("json"), ",", 2)[0]
@@ -30,5 +32,14 @@ func New() Handlers {
 	trans, _ := uni.GetTranslator("en")
 	en_translations.RegisterDefaultTranslations(validate, trans)
 
-	return Handlers{validator: validate, translator: uni}
+	emailClient, err := connectors.NewEmailClient()
+	if err != nil {
+		return Handlers{}, err
+	}
+
+	return Handlers{
+		validator:   validate,
+		translator:  uni,
+		emailClient: &emailClient,
+	}, nil
 }

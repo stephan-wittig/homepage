@@ -5,7 +5,6 @@ import (
 	"net/http"
 
 	"github.com/go-playground/validator/v10"
-	"github.com/stephan-wittig/homepage/api/connectors"
 	"github.com/stephan-wittig/homepage/api/models"
 )
 
@@ -28,7 +27,7 @@ func (h *Handlers) Contact(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = connectors.SendEmail(m)
+	err = h.emailClient.SendEmail(m)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

@@ -19,7 +19,7 @@ type App struct {
 	validator *validator.Validate
 }
 
-func (a *App) Initialize() {
+func (a *App) Initialize() error {
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
@@ -27,7 +27,11 @@ func (a *App) Initialize() {
 	}
 	a.port = port
 
-	a.handlers = handlers.New()
+	var err error
+	a.handlers, err = handlers.New()
+	if err != nil {
+		return err
+	}
 
 	r := mux.NewRouter()
 	cors := gorilla_handlers.CORS(
@@ -39,6 +43,8 @@ func (a *App) Initialize() {
 	r.Methods(http.MethodPost, http.MethodOptions).Path("/api/contact").HandlerFunc(a.handlers.Contact)
 
 	a.Router = r
+
+	return nil
 }
 
 func (a *App) Run() {
