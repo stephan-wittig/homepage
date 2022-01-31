@@ -14,6 +14,6 @@ resource "google_secret_manager_secret_iam_binding" "binding" {
   secret_id = each.value.secret_id
   role      = "roles/secretmanager.secretAccessor"
   members = [
-    "serviceAccount:homepage-338312@appspot.gserviceaccount.com",
+    "serviceAccount:${var.project_id}@appspot.gserviceaccount.com",
   ]
 }
