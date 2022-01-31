@@ -5,6 +5,14 @@ resource "google_app_engine_application" "web_app" {
 data "google_app_engine_default_service_account" "default" {
 }
 
+resource "google_storage_bucket" "appengine" {
+  name          = "us.artifacts.${var.project_id}.appspot.com "
+  location      = "US-EAST1"
+  
+  force_destroy = true
+  uniform_bucket_level_access = true
+}
+
 resource "google_app_engine_domain_mapping" "stephan_tech" {
   domain_name = "stephan.tech"
 
@@ -31,7 +39,7 @@ resource "google_project_iam_binding" "cloud_builder_storage" {
   ]
 }
 
-resource "google_service_account_iam_binding" "admin-account-iam" {
+resource "google_service_account_iam_binding" "cloud_builder_appengine_sa" {
   service_account_id = data.google_app_engine_default_service_account.default.name
   role               = "roles/iam.serviceAccountUser"
 
