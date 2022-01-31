@@ -20,6 +20,6 @@ locals {
     "EMAIL_TO"
   ])
 
-  cloudbuild_sa = "${google_project.this.number}@cloudbuild.gserviceaccount.com"
+  cloudbuild_sa = "${data.google_project.this.number}@cloudbuild.gserviceaccount.com"
   appengine_sa  = data.google_app_engine_default_service_account.default.email
 }
