@@ -6,7 +6,7 @@ provider "google" {
 
 resource "google_project_service" "apis" {
   for_each = local.enabled_apis
-  service = each.key
+  service  = each.key
 
   disable_dependent_services = true
   disable_on_destroy         = true
