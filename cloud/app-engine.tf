@@ -6,7 +6,7 @@ data "google_app_engine_default_service_account" "default" {
 }
 
 resource "google_storage_bucket" "appengine" {
-  name     = "us.artifacts.${var.project_id}.appspot.com "
+  name     = "us.artifacts.${var.project_id}.appspot.com"
   location = "US-EAST1"
 
   force_destroy               = true
