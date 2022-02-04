@@ -12,5 +12,5 @@ resource "google_project_service" "apis" {
   disable_on_destroy         = true
 }
 
-data "google_project" "this" {
+data "google_project" "project" {
 }
