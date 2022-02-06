@@ -84,6 +84,10 @@ func (ec *EmailClient) CheckAuth() error {
 
 	defer client.Close()
 
+	if err = client.Hello("localhost"); err != nil {
+		return err
+	}
+
 	err = client.StartTLS(
 		&tls.Config{ServerName: ec.host},
 	)
@@ -91,6 +95,5 @@ func (ec *EmailClient) CheckAuth() error {
 		return err
 	}
 
-	err = client.Auth(ec.auth)
-	return err
+	return client.Auth(ec.auth)
 }

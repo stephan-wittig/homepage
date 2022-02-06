@@ -22,7 +22,6 @@ func (h *Handlers) Health(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if allOk {
-		log.Printf("All OK: %t", allOk)
 		w.WriteHeader(http.StatusOK)
 	} else {
 		w.WriteHeader(http.StatusInternalServerError)
