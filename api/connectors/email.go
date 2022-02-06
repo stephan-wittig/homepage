@@ -2,6 +2,7 @@ package connectors
 
 import (
 	"context"
+	"crypto/tls"
 	"fmt"
 	"net/smtp"
 
@@ -9,12 +10,11 @@ import (
 )
 
 type EmailClient struct {
-	host     string
-	port     string
-	username string
-	password string
-	from     string
-	to       string
+	host string
+	port string
+	auth smtp.Auth
+	from string
+	to   string
 }
 
 func NewEmailClient() (EmailClient, error) {
@@ -36,19 +36,23 @@ func NewEmailClient() (EmailClient, error) {
 		return EmailClient{}, err
 	}
 
+	auth := smtp.PlainAuth(
+		"",
+		config["EMAIL_USERNAME"],
+		config["EMAIL_PASSWORD"],
+		config["EMAIL_HOST"],
+	)
+
 	return EmailClient{
-		host:     config["EMAIL_HOST"],
-		port:     config["EMAIL_PORT"],
-		username: config["EMAIL_USERNAME"],
-		password: config["EMAIL_PASSWORD"],
-		from:     config["EMAIL_FROM"],
-		to:       config["EMAIL_TO"],
+		host: config["EMAIL_HOST"],
+		port: config["EMAIL_PORT"],
+		auth: auth,
+		from: config["EMAIL_FROM"],
+		to:   config["EMAIL_TO"],
 	}, nil
 }
 
 func (ec *EmailClient) SendEmail(m models.Message) error {
-	auth := smtp.PlainAuth("", ec.username, ec.password, ec.host)
-
 	msg := fmt.Sprintf("To: %s\r\n", ec.to) +
 		fmt.Sprintf("From: %s\r\n", ec.from) +
 		fmt.Sprintf("Subject: %s\r\n", m.Subject) +
@@ -62,10 +66,31 @@ func (ec *EmailClient) SendEmail(m models.Message) error {
 
 	err := smtp.SendMail(
 		fmt.Sprintf("%s:%s", ec.host, ec.port),
-		auth,
+		ec.auth,
 		ec.from,
 		[]string{ec.to},
 		[]byte(msg),
 	)
+	return err
+}
+
+func (ec *EmailClient) CheckAuth() error {
+	client, err := smtp.Dial(
+		fmt.Sprintf("%s:%s", ec.host, ec.port),
+	)
+	if err != nil {
+		return err
+	}
+
+	defer client.Close()
+
+	err = client.StartTLS(
+		&tls.Config{ServerName: ec.host},
+	)
+	if err != nil {
+		return err
+	}
+
+	err = client.Auth(ec.auth)
 	return err
 }
