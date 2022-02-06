@@ -40,10 +40,11 @@ func (a *App) Initialize() error {
 	r := mux.NewRouter()
 	cors := gorilla_handlers.CORS(
 		gorilla_handlers.AllowedHeaders([]string{"Content-Type"}),
-		gorilla_handlers.AllowedMethods([]string{http.MethodPost}),
+		gorilla_handlers.AllowedMethods([]string{http.MethodPost, http.MethodGet}),
 	)
 	r.Use(cors)
 
+	r.Methods(http.MethodGet, http.MethodOptions).Path("/api/health").HandlerFunc(a.handlers.Health)
 	r.Methods(http.MethodPost, http.MethodOptions).Path("/api/contact").HandlerFunc(a.handlers.Contact)
 
 	a.Router = r
