@@ -72,6 +72,9 @@ const Aside: React.FC = () => {
                     <AsideLink to="/cv">
                         CV
                     </AsideLink>
+                    <AsideLink to="/wishes">
+                        Wishes (WIP)
+                    </AsideLink>
                     <AsideLink to="/contact">
                         Contact
                     </AsideLink>

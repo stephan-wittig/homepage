@@ -23,7 +23,20 @@ const Cv: React.FC = () =>
                     Professional Experience
                 </Header>
                 <Header level={2}>
-                    &#127754; Breaking Wave
+                    CGI
+                </Header>
+                <Segment title="Cloud Architect" dateRange={["Sep 2022", "today"]}>
+                    <div>
+                        With my expertise in cloud infrastructure and engineering management, I've built a team of cloud engineers and architects that help large players in the financial industry adopt cloud.
+                        My work does not only comprise consulting on IT-architecture but also building cloud-ready teams, organisations and DevOps processes.
+                    </div>
+                    <div>
+                        My work is currently focused on <em>DevSecOps</em> and <em>Identity and Acess Management</em> in hybrid cloud environments, for example using OAuth.
+                        I design solution architectures for <em>Microsoft Azure</em> and On-Premise environments.
+                    </div>
+                </Segment>
+                <Header level={2}>
+                    Breaking Wave
                 </Header>
                 <Segment title="Software Engineer" dateRange={["Aug 2019", "Sep 2021"]}>
                     <div>
@@ -70,7 +83,7 @@ const Cv: React.FC = () =>
                 <Header level={1}>
                     Education
                 </Header>
-                <Segment title="MSc in Management of Information Systems and Digital Innovation" dateRange={["Sep 2021", "Aug 2022"]}>
+                <Segment title="MSc in Management of Information Systems and Digital Innovation">
                     <div>
                         At <em>London School of Economics and Political Science</em>
                     </div>
@@ -78,7 +91,7 @@ const Cv: React.FC = () =>
                         &#10084;-Courses: Data Governance, Service Design
                     </div>
                 </Segment>
-                <Segment title="BSc in Business Administration With Focus on Business Information Systems" dateRange={["Sep 2015", "Jan 2019"]}>
+                <Segment title="BSc in Business Administration With Focus on Business Information Systems">
                     <div>
                         At <em>Frankfurt School of Finance &amp; Management</em>
                     </div>

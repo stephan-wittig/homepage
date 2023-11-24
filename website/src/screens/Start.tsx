@@ -6,7 +6,7 @@ const expertise: BulletPointContent = [
     "Programming",
     [
         "Backend",
-        [ "Go", "Java", "C#"],
+        [ "Go", "Kotlin, Java", "C#"],
         "Frontend",
         [ "HTML, TypeScript and SASS", "React", "Angular", "Vue"],
         "Blockchain",
@@ -16,11 +16,11 @@ const expertise: BulletPointContent = [
     "DevOps",
     [ "Azure DevOps", "Google Cloud Build", "Terraform", "Locust (Load testing)" ],
     "Cloud Infrastructure",
-    [ "Google Cloud Platform", "Microsoft Azure", "Amazon Web Services" ],
+    [ "Microsoft Azure", "Google Cloud Platform", "Amazon Web Services" ],
     "Requirements analysis",
     "Business process analysis",
     "Project management",
-    [ "SCRUM Project Owner" ]
+    [ "SAFe", "SCRUM Product Owner" ]
 ]
 
 const interests: BulletPointContent = [
@@ -49,8 +49,7 @@ const Start: React.FC = () =>
             <div className="hero-footer">
                 <section className="section">
                     <div className="container is-size-4 has-text-weight-medium is-max-desktop">
-                        Welcome to my homepage. I'm a software engineer currently studying at London School of Economics.
-                        Before that, I used to work at Breaking Wave and Deutsche Bank.
+                        Welcome to my homepage. I'm a cloud architect specialised on the financial services industry.
                     </div>
                 </section>
             </div>
@@ -61,7 +60,7 @@ const Start: React.FC = () =>
                     Areas of Expertise
                 </h4>
                 <div className="block">
-                    Most recently, I worked as a software engineer but I'm also an experienced business analyst and project manager. Those are things and concepts I've worked with:
+                    I'm currently employed as cloud architect by CGI but I'm also an experienced business analyst and project manager. Those are things and concepts I've worked with:
                 </div>
                 <div className="block">
                     <BulletPoints
