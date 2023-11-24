@@ -9,10 +9,10 @@ interface Props {
 /**
  * Renders strings as list items and array as nested list items
  */
-function renderBullet(bullet: string | Content): React.ReactElement {
+function renderBullet(bullet: string | Content, i: number): React.ReactElement {
   return typeof bullet === "string"
-    ? <li>{bullet}</li>
-    : <ul>
+    ? <li key={`bullet_${i}`}>{bullet}</li>
+    : <ul key={`bullet_${i}`}>
       {bullet.map(renderBullet)}
     </ul>;
 }

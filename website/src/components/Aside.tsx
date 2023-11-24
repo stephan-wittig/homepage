@@ -5,8 +5,7 @@ import cx from "classnames";
 const AsideLink: React.FC<NavLinkProps> = (linkProps) =>
     <NavLink
         { ...linkProps }
-        className="aside__link"
-        activeClassName="is-active"
+        className={({isActive}) => cx("aside__link", {"is-active": isActive})}
     />;
 
 const Brand: React.FC = () => 
@@ -67,7 +66,7 @@ const Aside: React.FC = () => {
             </div>
 
             <div className={cx("aside__menu", {"is-active": menuDisplayed})}>
-                    <AsideLink exact to="/">
+                    <AsideLink to="/">
                         Start
                     </AsideLink>
                     <AsideLink to="/cv">

@@ -60,19 +60,19 @@ const Start: React.FC = () =>
                 <h4 className="title is-3">
                     Areas of Expertise
                 </h4>
-                <p className="block">
+                <div className="block">
                     Most recently, I worked as a software engineer but I'm also an experienced business analyst and project manager. Those are things and concepts I've worked with:
-                </p>
-                <p className="block">
+                </div>
+                <div className="block">
                     <BulletPoints
                         content={expertise}
                     />
-                </p>
-                <p className="block">
+                </div>
+                <div className="block">
                     You'll find more about my technical abilities and my career <Link to="/cv">
                         on my CV
                     </Link>.
-                </p>
+                </div>
             </div>
         </section>
         <section className="section">
@@ -80,14 +80,14 @@ const Start: React.FC = () =>
                 <h4 className="title is-3">
                     Interests and Hobbies
                 </h4>
-                <p className="block">
+                <div className="block">
                     I'm interested in technology and the world beyond. I enjoy the little things in life, too, such as:
-                </p>
-                <p className="block">
+                </div>
+                <div className="block">
                     <BulletPoints
                         content={interests}
                     />
-                </p>
+                </div>
             </div>
         </section>
     </>;
