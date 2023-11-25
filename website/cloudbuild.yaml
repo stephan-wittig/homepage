@@ -1,13 +1,13 @@
 steps:
-- name: node:16
+- name: node:21
   dir: 'website'
   entrypoint: yarn
   args: ['install']
-- name: node:16
+- name: node:21
   dir: 'website'
   entrypoint: yarn
   args: ['test']
-- name: node:16
+- name: node:21
   dir: 'website'
   entrypoint: yarn
   args: ['build']
