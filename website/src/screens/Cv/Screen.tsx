@@ -31,7 +31,7 @@ const Cv: React.FC = () =>
                         My work does not only comprise consulting on IT-architecture but also building cloud-ready teams, organisations and DevOps processes.
                     </div>
                     <div>
-                        My work is currently focused on <em>DevSecOps</em> and <em>Identity and Acess Management</em> in hybrid cloud environments, for example using OAuth.
+                        My work is currently focused on <em>DevSecOps</em> and <em>Identity and Access Management</em> in hybrid cloud environments, for example using OAuth.
                         I design solution architectures for <em>Microsoft Azure</em> and On-Premise environments.
                     </div>
                 </Segment>

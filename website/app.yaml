@@ -1,16 +1,8 @@
 runtime: nodejs20
 handlers:
-  - url: /
-    static_files: build/index.html
-    upload: build/index.html
-    secure: always
-  - url: /static
-    static_dir: build/static
-    secure: always
-  - url: /(.*\.(json|ico|png|txt))$
+  - url: /(.*\..+)$
     static_files: build/\1
-    upload: build/.*\.(json|ico|png|txt)$
-    secure: always
+    upload: build/(.*\..+)$
   - url: .*
     static_files: build/index.html
     upload: build/index.html
@@ -18,4 +10,3 @@ handlers:
 instance_class: F1
 automatic_scaling:
   max_instances: 1
-    
