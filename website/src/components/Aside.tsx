@@ -20,33 +20,9 @@ const Brand: React.FC = () =>
 
 const Aside: React.FC = () => {
     const [ menuDisplayed, setMenuDisplayed ] = React.useState(false);
-    const openMenu = React.useCallback(() => {
-        setMenuDisplayed(true);
-    }, [ setMenuDisplayed ]);
-    const closeMenu = React.useCallback(() => {
-        setMenuDisplayed(false);
-    }, [ setMenuDisplayed ]);
-
-    React.useEffect(() => {
-        const className = menuDisplayed
-            ? "app"
-            : "navbar-burger";
-        
-        const action = menuDisplayed
-            ? closeMenu
-            : openMenu;
-
-        const elements = document.getElementsByClassName(className);
-        if ( elements.length !== 1) {
-            // That's unexpected
-            return;
-        }
-
-        elements[0].addEventListener("click", action);
-        return () => {
-            elements[0].removeEventListener("click", action);
-        }
-    }, [ menuDisplayed, closeMenu, openMenu ]);
+    const toggleMenu = () => {
+        setMenuDisplayed(!menuDisplayed);
+    };
 
     return <nav className="aside">
         <div className="aside__container has-background-light">
@@ -58,6 +34,7 @@ const Aside: React.FC = () => {
                 <a 
                     role="button"
                     className={cx("navbar-burger", {"is-active": menuDisplayed})}
+                    onClick={toggleMenu}
                 >
                   <span aria-hidden="true"></span>
                   <span aria-hidden="true"></span>
