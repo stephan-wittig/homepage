@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkedInLink, SendEmailForm } from "../components";
+import WishesArchitecture from "../images/wishesArchitecture.svg?react";
 
 const Wishlist: React.FC = () =>
     <>
@@ -9,10 +9,18 @@ const Wishlist: React.FC = () =>
                     Wishes
                 </h2>
                 <div className="block">
-                    Coming soon
+                    <em>Coming soon</em>
                 </div>
                 <div className="block">
                     Since Amazon limited its list function to Amazon links, I'm now working on an app that lets you populate your wish list with ideas with or without shops links.
+                </div>
+                <div className="block">
+                    <h2 className="title is-4">
+                        Architecture
+                    </h2>
+                    <figure className="image">
+                        <WishesArchitecture/>
+                    </figure>
                 </div>
             </div>
 
